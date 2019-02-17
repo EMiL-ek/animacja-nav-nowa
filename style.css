@@ -1,0 +1,65 @@
+@-webkit-keyframes go-width {
+    50%{
+        width: 100%;
+        left: 0;
+    }100%{
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes go-width {
+    50%{
+        width: 100%;
+        left: 0;
+    }100%{
+        width: 0;
+        left: 100%;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav {
+    width: 100vw;
+    border-bottom: 2px solid #000;
+}
+
+.nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 50px;
+    list-style-type: none;
+}
+
+.list-item {
+    padding: 0 10px;
+    margin: 0 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.list-item::before {
+    content: "";
+    width:0;
+    height: 3px;
+    background-color: brown;
+    position: absolute;
+    bottom: -3px;
+    left:0;
+}
+
+.list-item:hover::before {
+    -webkit-animation: go-width 1s;
+            animation: go-width 1s;
+}
